@@ -93,8 +93,11 @@
                     <artifactId>maven-compiler-plugin</artifactId>
                     <version>3.7.0</version>
                     <configuration>
-                        <source>1.8</source>
-                        <target>1.8</target>
+                        <jdkToolchain>
+                            <version>9</version>
+                        </jdkToolchain>
+                        <source>1.9</source>
+                        <target>1.9</target>
                         <showWarnings>true</showWarnings>
                         <optimize>true</optimize>
                         <showDeprecation>false</showDeprecation>
@@ -235,6 +238,7 @@
                             <arg>-deprecation</arg>
                             <arg>-feature</arg>
                             <arg>-Xfatal-warnings</arg>
+                            <arg>-nobootcp</arg> <!-- Java 9 issue: https://github.com/scala/bug/issues/10603 -->
                         </args>
                     </configuration>
                 </plugin>
