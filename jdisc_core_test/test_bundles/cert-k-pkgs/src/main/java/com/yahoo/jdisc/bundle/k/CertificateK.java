@@ -112,12 +112,6 @@ public class CertificateK {
     private final javax.tools.FileObject fileObject = null;
     private final javax.transaction.xa.XAException xaException = null;
     private final javax.xml.XMLConstants xmlConstants = null;
-    private final javax.xml.bind.DataBindingException dataBindingException = null;
-    private final javax.xml.bind.annotation.DomHandler<?,?> domHandler = null;
-    private final javax.xml.bind.annotation.adapters.CollapsedStringAdapter collapsedStringAdapter = null;
-    private final javax.xml.bind.attachment.AttachmentMarshaller attachmentMarshaller = null;
-    private final javax.xml.bind.helpers.AbstractMarshallerImpl abstractMarshaller = null;
-    private final javax.xml.bind.util.JAXBResult jaxbResult = null;
     private final javax.xml.crypto.AlgorithmMethod algorithmMethod = null;
     private final javax.xml.crypto.dom.DOMCryptoContext domCryptoContext = null;
     private final javax.xml.crypto.dsig.CanonicalizationMethod canonicalizationMethod = null;
@@ -174,7 +168,23 @@ public class CertificateK {
     private final org.xml.sax.ext.Attributes2Impl attributes2 = null;
     private final org.xml.sax.helpers.AttributesImpl attributes = null;
 
+
     // Packages made invisible from Java 9
+
+
+    // Packages that will be provided via deployed bundles from Vespa 7
+
+    // Bundle: javax.xml.bind:jaxb-api (OSGi bundle from 2.2.11)
+//    private final javax.xml.bind.DataBindingException dataBindingException = null;
+//    private final javax.xml.bind.annotation.DomHandler<?,?> domHandler = null;
+//    private final javax.xml.bind.annotation.adapters.CollapsedStringAdapter collapsedStringAdapter = null;
+//    private final javax.xml.bind.attachment.AttachmentMarshaller attachmentMarshaller = null;
+//    private final javax.xml.bind.helpers.AbstractMarshallerImpl abstractMarshaller = null;
+//    private final javax.xml.bind.util.JAXBResult jaxbResult = null;
+
+
+    // Packages that most likely won't be provided from JDisc from Vespa 7
+
 //    private final javax.activation.CommandInfo commandInfo = null;
 //    private final javax.activity.ActivityCompletedException activityCompletedException = null;
 //    private final javax.jws.HandlerChain handlerChain = null;
