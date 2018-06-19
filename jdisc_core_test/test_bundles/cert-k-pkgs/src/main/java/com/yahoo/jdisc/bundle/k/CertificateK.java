@@ -171,22 +171,18 @@ public class CertificateK {
 
     // Packages made invisible from Java 9
 
-
-    // Packages that will be provided via deployed bundles from Vespa 7
-    // TODO: add system test!
-
-    // Bundle: javax.xml.bind:jaxb-api (OSGi bundle from 2.2.11)
-//    private final javax.xml.bind.DataBindingException dataBindingException = null;
-//    private final javax.xml.bind.annotation.DomHandler<?,?> domHandler = null;
-//    private final javax.xml.bind.annotation.adapters.CollapsedStringAdapter collapsedStringAdapter = null;
-//    private final javax.xml.bind.attachment.AttachmentMarshaller attachmentMarshaller = null;
-//    private final javax.xml.bind.helpers.AbstractMarshallerImpl abstractMarshaller = null;
-//    private final javax.xml.bind.util.JAXBResult jaxbResult = null;
+    // Added as dep in jdisc_core: javax.xml.bind:jaxb-api (OSGi bundle from 2.2.11)
+    private final javax.activation.CommandInfo commandInfo = null;
+    private final javax.xml.bind.DataBindingException dataBindingException = null;
+    private final javax.xml.bind.annotation.DomHandler<?,?> domHandler = null;
+    private final javax.xml.bind.annotation.adapters.CollapsedStringAdapter collapsedStringAdapter = null;
+    private final javax.xml.bind.attachment.AttachmentMarshaller attachmentMarshaller = null;
+    private final javax.xml.bind.helpers.AbstractMarshallerImpl abstractMarshaller = null;
+    private final javax.xml.bind.util.JAXBResult jaxbResult = null;
 
 
     // Packages that most likely won't be provided from JDisc from Vespa 7
 
-//    private final javax.activation.CommandInfo commandInfo = null;
 //    private final javax.activity.ActivityCompletedException activityCompletedException = null;
 //    private final javax.jws.HandlerChain handlerChain = null;
 //    private final javax.jws.soap.SOAPBinding soapBinding = null;

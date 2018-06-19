@@ -39,6 +39,10 @@ public class ExportPackages {
            .append("org.aopalliance.intercept,")
            .append("org.aopalliance.aop,")
 
+           .append("sun.misc,")
+           .append("sun.net.util,")
+           .append("sun.security.krb5,")
+
            // xml-apis:xml-apis:1.4.01 is not a bundle
            .append("org.w3c.dom,")
            .append("org.w3c.dom.bootstrap,")
@@ -49,11 +53,8 @@ public class ExportPackages {
            .append("org.w3c.dom.ranges,")
            .append("org.w3c.dom.stylesheets,")
            .append("org.w3c.dom.traversal,")
-           .append("org.w3c.dom.views,")
+           .append("org.w3c.dom.views");
 
-           .append("sun.misc,")
-           .append("sun.net.util,")
-           .append("sun.security.krb5");
         for (int i = 1; i < args.length; ++i) {
             out.append(",").append(getExportedPackages(args[i]));
         }
