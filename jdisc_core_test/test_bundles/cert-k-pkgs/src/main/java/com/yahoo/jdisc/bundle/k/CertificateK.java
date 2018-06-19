@@ -173,6 +173,7 @@ public class CertificateK {
 
 
     // Packages that will be provided via deployed bundles from Vespa 7
+    // TODO: add system test!
 
     // Bundle: javax.xml.bind:jaxb-api (OSGi bundle from 2.2.11)
 //    private final javax.xml.bind.DataBindingException dataBindingException = null;
