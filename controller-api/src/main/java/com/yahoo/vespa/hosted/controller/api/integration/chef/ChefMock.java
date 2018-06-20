@@ -13,10 +13,7 @@ import com.yahoo.vespa.hosted.controller.api.integration.chef.rest.PartialNodeRe
 import javax.ws.rs.NotFoundException;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-import java.util.stream.Collectors;
 
 /**
  * @author mpolden
@@ -24,11 +21,14 @@ import java.util.stream.Collectors;
 public class ChefMock implements Chef {
 
     private final NodeResult result;
+    private final PartialNodeResult partialResult;
     private final List<String> chefEnvironments;
 
     public ChefMock() {
         result = new NodeResult();
         result.rows = new ArrayList<>();
+        partialResult = new PartialNodeResult();
+        partialResult.rows = new ArrayList<>();
         chefEnvironments = new ArrayList<>();
         chefEnvironments.add("hosted-verified-prod");
         chefEnvironments.add("hosted-infra-cd");
@@ -59,8 +59,14 @@ public class ChefMock implements Chef {
         return null;
     }
 
-    public void addSearchResult(ChefNode node) {
+    public ChefMock addSearchResult(ChefNode node) {
         result.rows.add(node);
+        return this;
+    }
+
+    public ChefMock addPartialResult(List<PartialNode> partialNodes) {
+        partialResult.rows.addAll(partialNodes);
+        return this;
     }
 
     @Override
@@ -75,15 +81,7 @@ public class ChefMock implements Chef {
 
     @Override
     public PartialNodeResult partialSearchNodes(String query, List<AttributeMapping> returnAttributes) {
-        PartialNodeResult partialNodeResult = new PartialNodeResult();
-        partialNodeResult.rows = result.rows.stream()
-                .map(chefNode -> {
-                    Map<String, String> data = new HashMap<>();
-                    data.put("fqdn", chefNode.name);
-                    return new PartialNode(data);
-                })
-                .collect(Collectors.toList());
-        return partialNodeResult;
+        return partialResult;
     }
 
     @Override
