@@ -59,6 +59,7 @@ public class AccessLogRequestLog extends AbstractLifeCycle implements RequestLog
                 accessLogEntry = new AccessLogEntry();
                 populateAccessLogEntryFromHttpServletRequest(request, accessLogEntry);
             }
+            request.getContentRead()
 
             final long startTime = request.getTimeStamp();
             final long endTime = System.currentTimeMillis();
